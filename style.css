@@ -39,9 +39,31 @@ button {
     font-size: 15px;
     margin: 5px;
     padding: 10px 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 button:hover {
     transition-duration: 0.3s;
     background-color: powderblue;
+}
+
+li {
+    border: none;
+    background-color: darkcyan;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+      0px;
+      border-radius: 10px;
+    color: #E0FFFF;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 18px;
+    margin: 5px 5px 5px 5px;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+ul {
+    text-align: center;
 }
