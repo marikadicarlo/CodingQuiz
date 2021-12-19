@@ -56,10 +56,10 @@ function updateCountdown(event){
     currentTime--;
     countdownEl.innerHTML = (currentTime);
 
-    if (currentTime == 0){
+    if (currentTime <= 0){
         alert("Time's Up!");
         quizContainer.innerHTML = "";
-        clearInterval(clear);
+        clearInterval(button);
         setTimeout(endGame, 60000);
     }
 };
@@ -92,11 +92,16 @@ quizContainer.addEventListener("click", function(event){
         if (answerClick===question.answer){
             currentScore++;
             currentTime++;
+            currentQuestion++;
+            console.log(currentQuestion);
+            console.log(questionList.length);
         }
         else{
             currentTime-=5;
             alert("Wrong!");
             currentQuestion++;
+            console.log(currentQuestion);
+            console.log(questionList.length);
         }
         if (currentQuestion>=questionList.length){
             clearInterval(timeLeft);
@@ -109,31 +114,32 @@ quizContainer.addEventListener("click", function(event){
     }
 });
 
-// function endGame({
-//     timeLeft.innerHTML="";
-//     var userName = prompt("Enter your initials");
-//     var currentHighScore = localStorage.getItem("score");
+var scoreList = [];
+    if (localStorage.getItem("highscores")) {
+        scoreList = JSON.parse(localStorage.getItem("highscores"))
+    }
 
-//     if (currentScore >= currentHighScore){
-//         localStorage.setItem("Score", currentScore);
-//         localStorage.setItem("Name", userName);
-//     }
+function endGame(){
+    quizContainer.innerHTML="";
+    clearInterval(button);
+    var userName = prompt("Enter your initials");
+    var currentHighScore = localStorage.getItem("score");
 
-//     var scoreDisplay = document.createElement("h1");
-//     scoreDisplay.innerText=(userName + "Your score is" + currentScore);
+    var info = {
+        initials:userName,
+        score:currentScore
+    }
 
-//     quizContainer.appendChild(scoreDisplay);
+    scoreList.push(info);
+    localStorage.setItem("highscores", JSON.stringify(scoreList));
 
-//     showHighScores();
-// });
+    // if (currentScore >= currentHighScore){
+    //     localStorage.setItem("Score", currentScore);
+    //     localStorage.setItem("Name", userName);
+    // }
 
-// function showHighScores(){
-//     var currentHighScore = localStorage.getItem("Score");
-//     var userName = localStorage.getItem("Name");
+    var scoreDisplay = document.createElement("h1");
+    scoreDisplay.innerText=("Your score is" + currentScore);
 
-//     if (currentHighScore && userName){
-//         var highScores=document.createElement("h3");
-//         highScores.innerText=("Highest Score" + userName + "" +currentHighScore);
-//         quizContainer.appendChild(highScores);
-//     }
-// }
+    quizContainer.appendChild(scoreDisplay);
+};
