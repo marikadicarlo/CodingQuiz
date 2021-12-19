@@ -5,7 +5,8 @@
 ## Coding Assessment Quiz
 This challenge required me to build a timed coding quiz with mulitple choice questions. This application will feature updated HTML and CSS powered by JavaScript code. Users will have 60 seconds to take the quiz. If your answer is correct, you will move forward to the next question. If your answer is incorrect, you will be prompted with an alert message, and move forward to the next question. At the end of the quiz, you will be prompted to enter your initials, and record your score. Highscores can be viewed separately.
 
-For this specific challenge, I had to do a lot of outside research, using Google and YouTube to help breakdown different variables and functions.
+For this specific challenge, I had to do a lot of outside research, using Google and YouTube to assist with different functions. I had a lot of difficulty with localStorage and saving the current and previous highscores. I also had a tough time with my timer. It would countdown, but once it reached "0" time, it would go into the negatives. Thankfully, after some research and a tutoring session, I was able to run the code with no issues.
+
 A special thank you to my tutor, Armando, for helping!
 
 ## User Story
