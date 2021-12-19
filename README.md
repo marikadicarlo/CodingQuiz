@@ -1,6 +1,6 @@
-[Link to Coding Assessment Quiz]()
+[Link to Coding Assessment Quiz](https://marikadicarlo.github.io/CodingQuiz/)
 
-![coding-quiz]()
+![coding-quiz](./codingquiz.png)
 
 ## Coding Assessment Quiz
 This challenge required me to build a timed coding quiz with mulitple choice questions. This application will feature updated HTML and CSS powered by JavaScript code. Users will have 60 seconds to take the quiz. If your answer is correct, you will move forward to the next question. If your answer is incorrect, you will be prompted with an alert message, and move forward to the next question. At the end of the quiz, you will be prompted to enter your initials, and record your score. Highscores can be viewed separately.
